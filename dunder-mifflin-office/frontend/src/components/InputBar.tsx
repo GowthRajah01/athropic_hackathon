@@ -2,11 +2,11 @@ import { useState, useRef, useEffect } from 'react';
 import { theme } from '../styles/theme';
 
 const PLACEHOLDERS = [
-  'Ask the Scranton branch anything…',
+  'Type your memo here…',
   'What can Dunder Mifflin help you with?',
   'Need a paper quote? A compliance check? HR advice?',
-  'The world\'s best boss is listening…',
-  'How can we help you today?',
+  'The World\'s Best Boss is listening…',
+  'Submit your request to the Scranton Branch…',
 ];
 
 interface InputBarProps {
@@ -17,6 +17,7 @@ interface InputBarProps {
 export default function InputBar({ onSend, disabled }: InputBarProps) {
   const [value, setValue] = useState('');
   const [placeholder] = useState(() => PLACEHOLDERS[Math.floor(Math.random() * PLACEHOLDERS.length)]);
+  const [focused, setFocused] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -37,84 +38,126 @@ export default function InputBar({ onSend, disabled }: InputBarProps) {
     if (!trimmed || disabled) return;
     onSend(trimmed);
     setValue('');
+    if (textareaRef.current) textareaRef.current.style.height = 'auto';
   }
 
-  // Auto-resize textarea
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setValue(e.target.value);
     e.target.style.height = 'auto';
     e.target.style.height = Math.min(e.target.scrollHeight, 140) + 'px';
   }
 
+  const canSend = !disabled && value.trim().length > 0;
+
   return (
     <div style={{
-      padding: '12px 16px',
+      padding: '14px 24px 16px',
       background: theme.colors.surface,
-      borderTop: `1px solid ${theme.colors.border}`,
+      borderTop: `1px dashed ${theme.colors.borderGrey}`,
       flexShrink: 0,
     }}>
       <div style={{
         display: 'flex',
         gap: '10px',
         alignItems: 'flex-end',
-        background: theme.colors.white,
-        border: `1.5px solid ${disabled ? theme.colors.border : theme.colors.primary}`,
-        borderRadius: theme.radii.lg,
-        padding: '8px 8px 8px 16px',
-        boxShadow: theme.shadows.sm,
-        transition: 'border-color 0.2s ease',
       }}>
+        {/* Textarea styled as a form field */}
         <textarea
           ref={textareaRef}
           value={value}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
           disabled={disabled}
           placeholder={disabled ? 'The team is working on it…' : placeholder}
           rows={1}
           style={{
             flex: 1,
-            border: 'none',
+            background: theme.colors.surface,
+            border: `1px solid ${theme.colors.primary}`,
+            borderRadius: theme.radii.sm,
             outline: 'none',
-            background: 'transparent',
+            boxShadow: focused ? `inset 0 0 0 2px ${theme.colors.primary}` : 'none',
             resize: 'none',
+            padding: '10px 14px',
+            fontFamily: theme.fonts.mono,
             fontSize: '14px',
-            lineHeight: '1.6',
+            lineHeight: 1.6,
             color: theme.colors.text,
-            fontFamily: theme.fonts.body,
-            minHeight: '24px',
+            minHeight: '44px',
             maxHeight: '140px',
             overflowY: 'auto',
+            transition: 'box-shadow 0.15s ease',
           }}
         />
+
+        {/* Send Memo button */}
         <button
           onClick={handleSend}
-          disabled={disabled || !value.trim()}
+          disabled={!canSend}
           style={{
-            background: disabled || !value.trim() ? theme.colors.border : theme.colors.accent,
-            color: theme.colors.white,
+            background: canSend ? theme.colors.primary : theme.colors.borderGrey,
+            color: theme.colors.surface,
             border: 'none',
-            borderRadius: theme.radii.md,
-            padding: '8px 16px',
-            fontSize: '13px',
-            fontWeight: '600',
-            cursor: disabled || !value.trim() ? 'not-allowed' : 'pointer',
+            borderRadius: theme.radii.sm,
+            padding: '10px 18px',
+            fontFamily: theme.fonts.serif,
+            fontSize: '12px',
+            fontWeight: 'bold',
+            letterSpacing: '0.14em',
+            textTransform: 'uppercase',
+            cursor: canSend ? 'pointer' : 'not-allowed',
             flexShrink: 0,
-            transition: 'background 0.2s ease',
-            height: '36px',
-            alignSelf: 'flex-end',
+            height: '44px',
+            opacity: canSend ? 1 : 0.5,
+            transition: 'background 0.15s ease, opacity 0.15s ease',
+          }}
+          onMouseEnter={e => {
+            if (canSend) (e.currentTarget as HTMLButtonElement).style.background = '#122848';
+          }}
+          onMouseLeave={e => {
+            if (canSend) (e.currentTarget as HTMLButtonElement).style.background = theme.colors.primary;
           }}
         >
-          Send
+          Send Memo
+        </button>
+
+        {/* CLEAR FILE stamp button */}
+        <button
+          onClick={() => setValue('')}
+          disabled={!value.trim()}
+          title="Clear draft"
+          style={{
+            background: 'rgba(255,255,255,0.5)',
+            border: `2px solid ${theme.colors.red}`,
+            borderRadius: theme.radii.sm,
+            padding: '6px 12px',
+            fontFamily: theme.fonts.mono,
+            fontSize: '10px',
+            fontWeight: 'bold',
+            letterSpacing: '0.18em',
+            color: theme.colors.red,
+            cursor: value.trim() ? 'pointer' : 'not-allowed',
+            opacity: value.trim() ? 1 : 0.35,
+            transform: 'rotate(-4deg)',
+            height: '44px',
+            flexShrink: 0,
+            transition: 'opacity 0.15s ease',
+          }}
+        >
+          CLEAR<br />FILE
         </button>
       </div>
+
       <div style={{
-        fontSize: '10px',
+        fontFamily: theme.fonts.serif,
+        fontSize: '11px',
         color: theme.colors.textLight,
         marginTop: '6px',
-        paddingLeft: '4px',
+        fontStyle: 'italic',
       }}>
-        Enter to send · Shift+Enter for new line
+        Enter to send memo · Shift+Enter for new line
       </div>
     </div>
   );

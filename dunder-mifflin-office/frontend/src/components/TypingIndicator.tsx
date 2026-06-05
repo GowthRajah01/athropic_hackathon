@@ -9,40 +9,55 @@ interface TypingIndicatorProps {
 export default function TypingIndicator({ activeAgents, phase }: TypingIndicatorProps) {
   if (!phase) return null;
 
-  let label = '';
-  if (phase === 'routing') label = 'Michael is delegating…';
-  else if (phase === 'specialists') {
+  let target = 'Scranton Branch';
+  if (phase === 'routing') {
+    target = 'Michael Scott · Management';
+  } else if (phase === 'specialists') {
     const names = activeAgents
       .filter(a => a !== 'michael-scott')
       .map(a => getAgentStyle(a).label.split(' ')[0]);
-    label = names.length > 0 ? `${names.join(', ')} ${names.length > 1 ? 'are' : 'is'} working…` : 'Working…';
+    target = names.length > 0 ? names.join(', ') + ' · Staff' : 'Team · Staff';
   } else if (phase === 'synthesis') {
-    label = 'Michael is putting it all together…';
+    target = 'Michael Scott · Management';
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '4px 0 12px 4px' }}>
+    <div style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '12px',
+      padding: '12px 16px',
+      border: `1px dashed ${theme.colors.primary}`,
+      borderRadius: theme.radii.sm,
+      marginBottom: '18px',
+      animation: 'faxPulse 1.6s ease-in-out infinite',
+    }}>
+      {/* Red status dot */}
       <div style={{
-        display: 'flex',
-        gap: '4px',
-        alignItems: 'center',
-      }}>
-        {[0, 1, 2].map(i => (
-          <div key={i} style={{
-            width: '6px',
-            height: '6px',
-            borderRadius: '50%',
-            background: theme.colors.primary,
-            animation: `bounce 1.2s ease-in-out ${i * 0.15}s infinite`,
-          }} />
-        ))}
-      </div>
+        width: '8px',
+        height: '8px',
+        borderRadius: '50%',
+        background: theme.colors.red,
+        flexShrink: 0,
+      }} />
+
+      {/* Transmission label */}
       <span style={{
-        fontSize: '12px',
-        color: theme.colors.textMuted,
-        fontStyle: 'italic',
+        fontFamily: theme.fonts.mono,
+        fontSize: '13px',
+        color: theme.colors.primary,
       }}>
-        {label}
+        Transmitting to {target}…
+      </span>
+
+      {/* Blinking cursor */}
+      <span style={{
+        fontFamily: theme.fonts.mono,
+        fontSize: '14px',
+        color: theme.colors.primary,
+        animation: 'cursorBlink 1s steps(1) infinite',
+      }}>
+        ▌
       </span>
     </div>
   );

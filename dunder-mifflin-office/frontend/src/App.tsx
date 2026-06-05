@@ -86,6 +86,8 @@ export default function App() {
     error: null,
   });
 
+  const [dismissedError, setDismissedError] = useState(false);
+
   useEffect(() => {
     Promise.all([api.getAgents(), api.getSessions()]).then(([agents, sessions]) => {
       dispatch({ type: 'SET_AGENTS', agents });
@@ -171,7 +173,7 @@ export default function App() {
       dispatch({ type: 'SET_SESSIONS', sessions });
 
     } catch (err: unknown) {
-      dispatch({ type: 'SET_ERROR', error: `Something went wrong: ${String(err)}` });
+      dispatch({ type: 'SET_ERROR', error: `The fax machine has encountered a difficulty: ${String(err)}` });
     }
   }, [state.currentSessionId, state.loadingPhase, state.userName]);
 
@@ -183,7 +185,7 @@ export default function App() {
       display: 'flex',
       flexDirection: 'column',
       background: theme.colors.background,
-      fontFamily: theme.fonts.body,
+      fontFamily: theme.fonts.mono,
     }}>
       <Header
         sessionTitle={currentTitle}
@@ -191,23 +193,39 @@ export default function App() {
         onToggleSessions={() => dispatch({ type: 'TOGGLE_DRAWER' })}
       />
 
-      {state.error && (
+      {/* Error banner — in-character, red stamp feel */}
+      {state.error && !dismissedError && (
         <div style={{
-          background: '#fdecea',
-          borderBottom: '1px solid #f5c6cb',
+          background: 'rgba(192,57,43,0.07)',
+          borderBottom: `1px solid ${theme.colors.red}`,
           padding: '10px 24px',
-          fontSize: '13px',
-          color: theme.colors.error,
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          gap: '12px',
         }}>
-          <span>⚠️ {state.error}</span>
+          <span style={{
+            fontFamily: theme.fonts.mono,
+            fontSize: '13px',
+            color: theme.colors.red,
+          }}>
+            ◉ {state.error}
+          </span>
           <button
-            onClick={() => dispatch({ type: 'SET_ERROR', error: null })}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: theme.colors.error, fontSize: '16px' }}
+            onClick={() => { dispatch({ type: 'SET_ERROR', error: null }); setDismissedError(true); }}
+            style={{
+              background: 'none',
+              border: `1px solid ${theme.colors.red}`,
+              borderRadius: theme.radii.sm,
+              cursor: 'pointer',
+              color: theme.colors.red,
+              fontFamily: theme.fonts.mono,
+              fontSize: '11px',
+              padding: '2px 8px',
+              letterSpacing: '0.12em',
+            }}
           >
-            ×
+            DISMISS
           </button>
         </div>
       )}
@@ -233,6 +251,21 @@ export default function App() {
             onSend={handleSend}
             disabled={!!state.loadingPhase || !state.currentSessionId}
           />
+
+          {/* Footer */}
+          <footer style={{
+            textAlign: 'center',
+            padding: '8px 16px',
+            borderTop: `1px solid ${theme.colors.borderGrey}`,
+            fontFamily: theme.fonts.serif,
+            fontStyle: 'italic',
+            fontSize: '12px',
+            color: theme.colors.grey,
+            background: theme.colors.surface,
+            flexShrink: 0,
+          }}>
+            Dunder Mifflin Inc. · Scranton, PA · Est. 1949 · Limitless Paper in a Paperless World
+          </footer>
         </div>
 
         <AgentSidebar

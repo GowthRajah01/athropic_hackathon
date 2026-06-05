@@ -1,0 +1,72 @@
+{
+  "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3",
+  "created_at": "2026-06-05T14:40:20.511296+00:00",
+  "user_name": "Regional Director",
+  "title": "Session — Regional Director",
+  "messages": [
+    {
+      "id": "3fd08a3c-5526-4f41-b799-7533131414b2",
+      "timestamp": "2026-06-05T14:40:34.891358+00:00",
+      "role": "user",
+      "agent": null,
+      "content": "Plan the summer office party",
+      "user_name": "Regional Director",
+      "message_type": "user"
+    },
+    {
+      "id": "558a58fb-1bc9-4985-980f-d294bf5208b2",
+      "timestamp": "2026-06-05T14:40:38.626137+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Angela's gonna make sure we don't blow the budget, Pam will handle the logistics like the organizational goddess she is, and Kelly will make sure it's actually fun and on-brand for the Scranton vibe.",
+      "message_type": "routing",
+      "role": "assistant"
+    },
+    {
+      "id": "31d43b41-684a-4166-84bd-a166c130ee76",
+      "timestamp": "2026-06-05T14:40:50.807857+00:00",
+      "agent": "angela-martin",
+      "agent_display_name": "Angela Martin",
+      "agent_emoji": "🐱",
+      "agent_color": "#880e4f",
+      "content": "*sets down pen, straightens papers, looks up with the expression of someone who has been waiting for this moment*\n\nThe Party Planning Committee has already begun preliminary assessments. Michael's directive — \"classy but not cheap\" — is noted, though I will remind everyone that \"not cheap\" does not mean \"no limits.\" There is a budget. There will always be a budget. I am setting it at **$400**, which is consistent with our prior annual party expenditures and well within what is appropriate for a regional branch of our size.\n\nThe breakdown is as follows: **Food — $180** (a proper spread, not a taco bar, I don't care what Kevin says); **Non-alcoholic beverages — $60** (the alcoholic component requires a separate liability waiver and Michael's written sign-off, which I will need before I order anything); **Decorations — $95** (tasteful, summer theme, white and gold, *no* inflatable anything); **Miscellaneous/contingency — $65** (this is not a slush fund, Phyllis). That is $400. Exactly $400.\n\nAny suggestions submitted to the committee will be reviewed by me. If a suggestion is not on the approved list, it will not be incorporated. The venue is the office — renting an external space is not in the budget and frankly unnecessary. I will source the florals myself from a vendor I trust. Music will be a curated playlist. There will be no DJ. We are not doing that again.\n\nI will circulate the formal event plan by end of week. Anyone wishing to contribute ideas may submit them in writing to my inbox. I will read them.",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "63c1a14f-245d-4554-b50e-a8fa8cd2bb18",
+      "timestamp": "2026-06-05T14:40:50.820326+00:00",
+      "agent": "pam-beesly",
+      "agent_display_name": "Pam Beesly",
+      "agent_emoji": "🎨",
+      "agent_color": "#7b4397",
+      "content": "Okay! A summer office party — I'm on it. Michael mentioned the parking lot as a possible venue, which actually could be really nice if we set it up well. I'm thinking we string some lights, maybe rent a few folding tables with those paper tablecloths, and it instantly feels festive rather than just... a parking lot. I'll check with building management about whether we need any kind of permit or approval to use the space, and I'll confirm the date with Michael before anything goes out — I want to make sure it doesn't land on the same weekend as the Lackawanna County thing again. That was a whole situation.\n\nOnce I have a confirmed date and location locked down, I'll send out a save-the-date to the full office. I'll keep the invite warm but informative — time, location, whether people should bring anything, that kind of thing. I'll also quietly check with Oscar on what kind of budget we're actually working with before Michael promises anyone a DJ. Last year he told everyone there'd be a \"live music experience\" and it turned out to be his own iPod through a Bluetooth speaker. Which was — it was fine, it was fine.\n\nIn the meantime, can I ask — is there a theme in mind, or should I put together two or three simple options for Michael to choose from? In my experience it's better to give him options with guardrails than an open canvas. I'll also loop in Dwight on setup logistics because honestly he is extremely good at that part, even if he takes it very seriously. I'll make sure he knows he's *not* in charge of security. That's just better for everyone.\n\nI'll have a draft plan ready to circulate by end of week. Leave it with me — I've got it.",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "3f5d968d-6744-4b84-808f-a3b8e9d16488",
+      "timestamp": "2026-06-05T14:40:50.832663+00:00",
+      "agent": "kelly-kapoor",
+      "agent_display_name": "Kelly Kapoor",
+      "agent_emoji": "💅",
+      "agent_color": "#d81b60",
+      "content": "Oh my god, okay, YES. Summer party, I have SO many feelings about this and they are all correct.\n\nSo here's what's trending right now and what people actually *want* — they want an experience, not just like, chips and a card table. The whole thing is about \"elevated casual,\" which sounds contradictory but it's not, it's literally just vibes. Think outdoor-adjacent, warm tones, something that feels like a Pinterest board came to life but like, a *good* Pinterest board, not the weird DIY ones. A \"Golden Hour Garden Party\" theme is genuinely everywhere right now and it works because it's aspirational but not trying too hard. People respond to that. I know because I read seventeen lifestyle blogs and also I have good instincts.\n\nFor music — and this is important, Michael, please listen — it cannot be classic rock. It cannot be \"Don't Stop Believin'\" again. The playlist needs to feel like something you'd hear at a trendy rooftop bar, so you're looking at like, Beyoncé obviously, some Doja Cat, a little throwback Destiny's Child which bridges the gap for people who are older and need something familiar, I won't name names. The key is that it should feel *curated*, not like someone hit shuffle on a 2009 iPod. Ryan made me a playlist once and it was actually really good and then he said it wasn't for me specifically which was hurtful but the playlist was still good.\n\nBottom line: Golden Hour theme, fairy lights, a grazing table instead of a buffet because grazing tables photograph better and people take pictures of everything now, and a playlist that has energy but isn't chaotic. I can handle all of this. I want to handle all of this. Do you want to know what I'll do? I'll do everything.",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "fbb93a76-4344-400c-a230-0b4e9aac33db",
+      "timestamp": "2026-06-05T14:41:05.350443+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Okay. *Okay.* WOW. I just read all of that and I have to say — and I mean this from the very bottom of my heart, which is enormous, by the way, doctors have commented on it — this is why Dunder Mifflin Scranton is the greatest branch in the entire company. Possibly the world. These people, *my* people, came through. Angela gave us structure. Pam gave us logistics and warmth. Kelly gave us... a lot of words, but also honestly some really good ideas about the vibes. That's what I always say: \"It takes a village to raise a party.\" I think that's Churchill. Or maybe Diddy. Doesn't matter.\n\nHere is the plan. We are doing a **Golden Hour Garden Party** in the **parking lot**, which sounds bad but trust me, with fairy lights and what Kelly is calling a \"grazing table\" — which is just fancy charcuterie, but she's right, it photographs beautifully — it is going to be *stunning*. Budget is **$400**, locked in by Angela, which is fine, that's fine, I fully support that number and it was basically my idea. Pam is handling the invite, the date confirmation, and building management, because Pam is the heart of this office and also the only one who remembers to get permits. Music will be curated — no classic rock, Kelly made a compelling case and I agreed immediately because I am a progressive leader who listens. Dwight is on setup. He is NOT on security. That is final.\n\nThis party is going to be legendary. People are going to come into work on Monday and say, \"Michael, that was the best summer party I have ever attended in my professional or personal life,\" and I'm going to say, \"I know, but tell me more.\" Because that's what a great boss does. He creates memories. He builds community. He strings up some fairy lights in a parking lot and makes people feel like they are somewhere magical. *That's what she said.* No — wait — that doesn't work here. Doesn't matter. **PARTY ON, SCRANTON.** 🌟",
+      "message_type": "synthesis",
+      "role": "assistant"
+    }
+  ]
+}

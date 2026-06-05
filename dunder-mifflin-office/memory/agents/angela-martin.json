@@ -1,0 +1,38 @@
+{
+  "agent": "angela-martin",
+  "entries": [
+    {
+      "type": "precedent",
+      "content": "Summer office party budget set at $400 with specific allocation: Food $180, Non-alcoholic beverages $60, Decorations $95, Miscellaneous $65",
+      "tags": [
+        "party planning",
+        "budget",
+        "office events"
+      ],
+      "timestamp": "2026-06-05T14:41:08.114333+00:00",
+      "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    },
+    {
+      "type": "preference",
+      "content": "Angela prefers tasteful decorations in white and gold theme, no inflatable decorations, and opposes hiring a DJ for office parties",
+      "tags": [
+        "party planning",
+        "aesthetic preferences",
+        "Angela's standards"
+      ],
+      "timestamp": "2026-06-05T14:41:08.114406+00:00",
+      "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    },
+    {
+      "type": "precedent",
+      "content": "Party Planning Committee operates with written submission process for ideas; Angela reviews all suggestions and maintains approved/unapproved lists",
+      "tags": [
+        "party planning",
+        "committee procedures",
+        "Angela's process"
+      ],
+      "timestamp": "2026-06-05T14:41:08.114411+00:00",
+      "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "agent": "toby-flenderson",
+  "entries": [
+    {
+      "type": "precedent",
+      "content": "An HR complaint was filed. Toby emphasized the need for formal documentation, proper protocol adherence, legal compliance, and protection of the complainant from retaliation.",
+      "tags": [
+        "HR",
+        "complaint",
+        "procedure",
+        "legal-compliance"
+      ],
+      "timestamp": "2026-06-05T14:43:30.969725+00:00",
+      "session_id": "12b5d86f-8632-4c24-9e05-f66ccf80ed36"
+    }
+  ]
+}

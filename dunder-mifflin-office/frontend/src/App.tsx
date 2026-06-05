@@ -40,6 +40,7 @@ type Action =
   | { type: 'SET_PHASE'; phase: LoadingPhase }
   | { type: 'SET_ACTIVE_AGENTS'; agents: string[] }
   | { type: 'ADD_PENDING'; message: DisplayMessage }
+  | { type: 'APPEND_CHUNK'; id: string; chunk: string }
   | { type: 'TOGGLE_DRAWER' }
   | { type: 'SET_ERROR'; error: string | null }
   | { type: 'UPSERT_SESSION'; session: SessionSummary };
@@ -57,6 +58,14 @@ function reducer(state: AppState, action: Action): AppState {
     case 'SET_PHASE': return { ...state, loadingPhase: action.phase };
     case 'SET_ACTIVE_AGENTS': return { ...state, activeAgents: action.agents };
     case 'ADD_PENDING': return { ...state, pendingMessages: [...state.pendingMessages, action.message] };
+    case 'APPEND_CHUNK': return {
+      ...state,
+      pendingMessages: state.pendingMessages.map(m =>
+        m.id === action.id
+          ? { ...m, content: m.content + action.chunk, agentMessage: m.agentMessage ? { ...m.agentMessage, content: m.agentMessage.content + action.chunk } : undefined }
+          : m
+      ),
+    };
     case 'TOGGLE_DRAWER': return { ...state, drawerOpen: !state.drawerOpen };
     case 'SET_ERROR': return { ...state, error: action.error, loadingPhase: null, activeAgents: [] };
     case 'UPSERT_SESSION': {
@@ -126,6 +135,8 @@ export default function App() {
   const handleSend = useCallback(async (message: string) => {
     if (!state.currentSessionId || state.loadingPhase) return;
 
+    const sessionId = state.currentSessionId;
+
     const userMsg: DisplayMessage = {
       id: `user-${Date.now()}`,
       timestamp: new Date().toISOString(),
@@ -138,40 +149,50 @@ export default function App() {
     dispatch({ type: 'SET_ACTIVE_AGENTS', agents: ['michael-scott'] });
 
     try {
-      const response = await api.sendMessage(message, state.currentSessionId, state.userName);
+      for await (const event of api.sendMessageStream(message, sessionId, state.userName)) {
+        if (event.type === 'message_start') {
+          const shell: DisplayMessage = {
+            id: event.id,
+            timestamp: event.timestamp,
+            type: 'agent',
+            content: '',
+            agentMessage: {
+              id: event.id,
+              timestamp: event.timestamp,
+              agent: event.agent,
+              agent_display_name: event.agent_display_name,
+              agent_emoji: event.agent_emoji,
+              agent_color: event.agent_color,
+              content: '',
+              message_type: event.message_type,
+            },
+          };
+          dispatch({ type: 'ADD_PENDING', message: shell });
 
-      const routingMsgs = response.messages.filter(m => m.message_type === 'routing');
-      const specialistMsgs = response.messages.filter(m => m.message_type === 'specialist');
-      const synthesisMsgs = response.messages.filter(m => m.message_type === 'synthesis');
+          if (event.message_type === 'specialist') {
+            dispatch({ type: 'SET_PHASE', phase: 'specialists' });
+          } else if (event.message_type === 'synthesis') {
+            dispatch({ type: 'SET_PHASE', phase: 'synthesis' });
+            dispatch({ type: 'SET_ACTIVE_AGENTS', agents: ['michael-scott'] });
+          }
+        } else if (event.type === 'content_chunk') {
+          dispatch({ type: 'APPEND_CHUNK', id: event.id, chunk: event.chunk });
+        } else if (event.type === 'message_end') {
+          if (event.routing) {
+            dispatch({ type: 'SET_ACTIVE_AGENTS', agents: event.routing.agents });
+          }
+        } else if (event.type === 'done') {
+          dispatch({ type: 'SET_PHASE', phase: null });
+          dispatch({ type: 'SET_ACTIVE_AGENTS', agents: [] });
 
-      dispatch({ type: 'SET_PHASE', phase: 'specialists' });
-      dispatch({ type: 'SET_ACTIVE_AGENTS', agents: response.routing.agents });
-
-      for (const msg of routingMsgs) {
-        dispatch({ type: 'ADD_PENDING', message: { id: msg.id, timestamp: msg.timestamp, type: 'agent', content: msg.content, agentMessage: msg } });
-      }
-      for (const msg of specialistMsgs) {
-        dispatch({ type: 'ADD_PENDING', message: { id: msg.id, timestamp: msg.timestamp, type: 'agent', content: msg.content, agentMessage: msg } });
-      }
-
-      if (synthesisMsgs.length > 0) {
-        dispatch({ type: 'SET_PHASE', phase: 'synthesis' });
-        dispatch({ type: 'SET_ACTIVE_AGENTS', agents: ['michael-scott'] });
-        for (const msg of synthesisMsgs) {
-          dispatch({ type: 'ADD_PENDING', message: { id: msg.id, timestamp: msg.timestamp, type: 'agent', content: msg.content, agentMessage: msg } });
+          const [freshHistory, sessions] = await Promise.all([
+            api.getSessionHistory(sessionId),
+            api.getSessions(),
+          ]);
+          dispatch({ type: 'SET_SESSION', session: freshHistory, sessionId });
+          dispatch({ type: 'SET_SESSIONS', sessions });
         }
       }
-
-      dispatch({ type: 'SET_PHASE', phase: null });
-      dispatch({ type: 'SET_ACTIVE_AGENTS', agents: [] });
-
-      const [freshHistory, sessions] = await Promise.all([
-        api.getSessionHistory(state.currentSessionId),
-        api.getSessions(),
-      ]);
-      dispatch({ type: 'SET_SESSION', session: freshHistory, sessionId: state.currentSessionId });
-      dispatch({ type: 'SET_SESSIONS', sessions });
-
     } catch (err: unknown) {
       dispatch({ type: 'SET_ERROR', error: `The fax machine has encountered a difficulty: ${String(err)}` });
     }

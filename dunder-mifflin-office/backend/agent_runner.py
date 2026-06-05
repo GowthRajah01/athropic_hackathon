@@ -28,7 +28,7 @@ Michael's brief: "{brief}"
 
 The user originally said: "{user_message}"
 
-Respond in character. Be concise — 2-4 paragraphs. Stay completely in your character's voice.
+Respond in character. Be brief — one short paragraph only (3-5 sentences max). Stay completely in your character's voice.
 Do not break character or acknowledge that you are an AI.
 """
 
@@ -41,7 +41,7 @@ Your specialists have reported back. Here are their responses:
 
 The user's original message was: "{user_message}"
 
-Now synthesise their work into a final response. Stay in character as Michael Scott — enthusiastic, heartfelt, slightly tangential. Take appropriate credit, give the team a shoutout, and produce a clear final summary that answers the user. Keep it to 2-3 paragraphs.
+Now synthesise their work into a final response. Stay in character as Michael Scott — enthusiastic, heartfelt, slightly tangential. Take appropriate credit, give the team a shoutout, and produce a clear final summary that answers the user. One short paragraph only (4-6 sentences max).
 """
 
 MEMORY_EXTRACTION_PROMPT = """
@@ -97,11 +97,42 @@ async def run_agent(
 
     response = await client.messages.create(
         model=config.MODEL_AGENT,
-        max_tokens=1024,
+        max_tokens=300,
         system=system,
         messages=messages,
     )
     return response.content[0].text.strip()
+
+
+async def run_agent_stream(
+    agent: AgentDefinition,
+    user_message: str,
+    brief: str,
+    conversation_history: list[dict],
+    client: AsyncAnthropic,
+):
+    """Yields text chunks from the agent response via streaming."""
+    memory_entries = memory.load_agent_memory(agent.name)
+    memories_text = _format_memories(memory_entries)
+
+    system = agent.system_prompt + "\n\n" + SPECIALIST_SUFFIX.format(
+        skills=agent.skills_prompt,
+        memories=memories_text,
+        brief=brief,
+        user_message=user_message,
+    )
+
+    messages = list(conversation_history[-8:])
+    messages.append({"role": "user", "content": user_message})
+
+    async with client.messages.stream(
+        model=config.MODEL_AGENT,
+        max_tokens=300,
+        system=system,
+        messages=messages,
+    ) as stream:
+        async for chunk in stream.text_stream:
+            yield chunk
 
 
 async def run_agents_parallel(
@@ -167,11 +198,56 @@ async def synthesize_with_michael(
 
     response = await client.messages.create(
         model=config.MODEL_SYNTHESIS,
-        max_tokens=1024,
+        max_tokens=300,
         system=system,
         messages=messages,
     )
     return response.content[0].text.strip()
+
+
+async def synthesize_with_michael_stream(
+    user_message: str,
+    specialist_responses: list[tuple[str, str]],
+    agents: dict[str, AgentDefinition],
+    conversation_history: list[dict],
+    client: AsyncAnthropic,
+):
+    """Yields text chunks from Michael's synthesis via streaming."""
+    michael = agents.get("michael-scott")
+    if not michael:
+        yield "Thanks everyone. Great work. Really great work."
+        return
+
+    formatted = []
+    for name, text in specialist_responses:
+        agent = agents.get(name)
+        display = agent.display_name if agent else name
+        formatted.append(f"**{display}:** {text}")
+
+    specialist_block = "\n\n".join(formatted)
+
+    michael_memories = memory.load_agent_memory("michael-scott")
+    memories_text = _format_memories(michael_memories)
+
+    system = michael.system_prompt + f"\n\n## YOUR MEMORIES\n{memories_text}"
+
+    messages = list(conversation_history[-6:])
+    messages.append({
+        "role": "user",
+        "content": SYNTHESIS_PROMPT.format(
+            specialist_responses=specialist_block,
+            user_message=user_message,
+        )
+    })
+
+    async with client.messages.stream(
+        model=config.MODEL_SYNTHESIS,
+        max_tokens=300,
+        system=system,
+        messages=messages,
+    ) as stream:
+        async for chunk in stream.text_stream:
+            yield chunk
 
 
 async def extract_and_save_memory(

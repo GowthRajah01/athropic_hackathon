@@ -54,3 +54,39 @@ export interface SessionHistoryResponse {
   title: string;
   messages: Array<Record<string, unknown>>;
 }
+
+// SSE streaming event shapes
+export interface StreamEventMessageStart {
+  type: 'message_start';
+  id: string;
+  timestamp: string;
+  agent: string;
+  agent_display_name: string;
+  agent_emoji: string;
+  agent_color: string;
+  message_type: 'routing' | 'specialist' | 'synthesis';
+  routing?: RoutingInfo;
+}
+
+export interface StreamEventContentChunk {
+  type: 'content_chunk';
+  id: string;
+  chunk: string;
+}
+
+export interface StreamEventMessageEnd {
+  type: 'message_end';
+  id: string;
+  routing?: RoutingInfo;
+}
+
+export interface StreamEventDone {
+  type: 'done';
+  session_id: string;
+}
+
+export type StreamEvent =
+  | StreamEventMessageStart
+  | StreamEventContentChunk
+  | StreamEventMessageEnd
+  | StreamEventDone;

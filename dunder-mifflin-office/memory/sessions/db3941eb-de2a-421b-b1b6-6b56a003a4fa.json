@@ -1,0 +1,61 @@
+{
+  "session_id": "db3941eb-de2a-421b-b1b6-6b56a003a4fa",
+  "created_at": "2026-06-05T15:17:38.246631+00:00",
+  "user_name": "Regional Director",
+  "title": "Session — Regional Director",
+  "messages": [
+    {
+      "id": "58be6105-760b-4e55-9d14-afa581f821dc",
+      "timestamp": "2026-06-05T15:18:07.258716+00:00",
+      "role": "user",
+      "agent": null,
+      "content": "angela was mean to me",
+      "user_name": "Regional Director",
+      "message_type": "user"
+    },
+    {
+      "id": "0f4b889d-1525-42fd-9c92-129be7c0208a",
+      "timestamp": "2026-06-05T15:18:10.778047+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Okay, first we need to hear what happened — Pam will get the real story — and then Toby needs to make sure this doesn't turn into a thing. Angela can be... a lot.",
+      "message_type": "routing",
+      "role": "assistant"
+    },
+    {
+      "id": "5b155fb1-dd92-4490-8176-652a6591fdb5",
+      "timestamp": "2026-06-05T15:18:20.315892+00:00",
+      "agent": "pam-beesly",
+      "agent_display_name": "Pam Beesly",
+      "agent_emoji": "🎨",
+      "agent_color": "#7b4397",
+      "content": "Oh no, I'm sorry to hear that. Angela can be... a lot, sometimes. I want to make sure Michael has the full picture so he can handle this properly — he really does want to help, even if his approach is sometimes *creative*.\n\nCan you tell me a little more about what happened? Like, was this something she said to you directly, or was it more of a look — because Angela has a whole *catalog* of looks — or did something happen in a meeting, or over email? Any context you can give me really helps. Sometimes what feels like Angela being mean is actually just Angela being Angela, and sometimes it's genuinely something that needs to be addressed. I want to make sure we handle it the right way either way.\n\nAlso, just so you know — whatever you tell me, I'll pass it along to Michael accurately and kindly. You don't have to worry about it getting twisted around. And if there's anything I can do in the meantime, like maybe making sure you two aren't scheduled for anything together for a bit, just say the word.",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "1e8bea88-d4c3-40e4-b564-b0fe0beaaca8",
+      "timestamp": "2026-06-05T15:18:20.329343+00:00",
+      "agent": "toby-flenderson",
+      "agent_display_name": "Toby Flenderson",
+      "agent_emoji": "📋",
+      "agent_color": "#546e7a",
+      "content": "*sets down a form he was already halfway through filling out*\n\nOkay. I hear you. And I want you to know — I take this seriously, even if... well, even if some people in this office treat the HR process like more of a suggestion than a policy. Can you tell me a little more about what happened? Specifically: what was said or done, when it occurred, and whether there were any witnesses? I'm not trying to make this into a big thing — I just need to understand whether this rises to the level of a formal complaint, or whether it's something we can address more informally first.\n\nI do want to flag — and I know this isn't what anyone wants to hear — that if Angela made a comment that touched on a protected characteristic, or if this is part of a pattern of conduct, then we're potentially looking at a hostile work environment situation, and I'm obligated to document it regardless of how Michael wants to handle it. That's not me being difficult. That's... that's just the law.\n\n*quietly slides a complaint intake form across the desk*\n\nYou don't have to fill that out right now. But it's there. And for what it's worth — I believe you. Angela can be... I've had a few conversations with Angela myself. Professionally. In my HR capacity. So. Just — tell me what happened, and we'll figure out the right next step together.",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "403ec14f-e8c5-44c1-8dcf-754aee59f5c2",
+      "timestamp": "2026-06-05T15:18:33.281396+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Okay. *Okay.* First of all — I want you to know that I heard you. Michael Scott heard you. And unlike some managers — *corporate* — I don't just hear with my ears, I hear with my whole heart. That's something I learned from a fortune cookie, but also from my own life experience, which is basically the same thing.\n\nSo here's the deal. I sent my two best people on this — Pam, who is basically the emotional backbone of this entire office and also very good at remembering things I forget, and Toby, who I normally find to be a real buzzkill but who, in this case, was actually... not terrible? He had some solid points about documentation and protected characteristics and, look, I didn't understand all of it, but the *vibes* were professional. The point is: we need a little more information from you. What exactly did Angela *do*? Was it a comment? Was it a look — because I have personally been on the receiving end of the Angela Martin Death Stare and I want you to know, I almost cried, and I am a very strong man. Was it in a meeting? An email? Did anyone see it? These details matter, both for Pam's kindness purposes AND for Toby's clipboard purposes.\n\nHere's what I need you to do: come talk to me. Or Pam. Or, if you *have* to, Toby — but try me first. Angela can be a lot. I know that. I have *managed* that for years and it has taken every ounce of my people skills, which are legendary. But nobody in MY office — MY family — should feel like they've been treated meanly. That is not the Dunder Mifflin Scranton way. That is not the *Michael Scott* way. So tell us what happened, and we will handle it. Together. Because that's what we do here. Bam. Said the lady.",
+      "message_type": "synthesis",
+      "role": "assistant"
+    }
+  ]
+}

@@ -12,6 +12,28 @@
       ],
       "timestamp": "2026-06-05T14:43:30.969725+00:00",
       "session_id": "12b5d86f-8632-4c24-9e05-f66ccf80ed36"
+    },
+    {
+      "type": "fact",
+      "content": "User reported being treated poorly by Angela",
+      "tags": [
+        "complaint",
+        "Angela",
+        "interpersonal"
+      ],
+      "timestamp": "2026-06-05T15:18:34.612619+00:00",
+      "session_id": "db3941eb-de2a-421b-b1b6-6b56a003a4fa"
+    },
+    {
+      "type": "precedent",
+      "content": "Toby has had previous professional conversations with Angela regarding her conduct",
+      "tags": [
+        "Angela",
+        "HR_history",
+        "pattern"
+      ],
+      "timestamp": "2026-06-05T15:18:34.612652+00:00",
+      "session_id": "db3941eb-de2a-421b-b1b6-6b56a003a4fa"
     }
   ]
 }

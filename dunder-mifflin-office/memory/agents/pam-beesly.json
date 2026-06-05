@@ -32,6 +32,82 @@
       ],
       "timestamp": "2026-06-05T14:41:07.661011+00:00",
       "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    },
+    {
+      "type": "relationship",
+      "content": "User has had a negative interaction with Angela that they felt was mean-spirited",
+      "tags": [
+        "conflict",
+        "angela",
+        "workplace"
+      ],
+      "timestamp": "2026-06-05T15:18:34.615561+00:00",
+      "session_id": "db3941eb-de2a-421b-b1b6-6b56a003a4fa"
+    },
+    {
+      "type": "fact",
+      "content": "Ryan tends to talk excessively about strategy and industry trends, often during work time, causing noticeable reactions (eye-rolls) from sales team and Jim",
+      "tags": [
+        "ryan",
+        "workplace-behavior",
+        "communication"
+      ],
+      "timestamp": "2026-06-05T15:30:53.140936+00:00",
+      "session_id": "4d04ba0c-d2c4-4613-951b-aa8fb390d75c"
+    },
+    {
+      "type": "precedent",
+      "content": "Pam agreed to monitor Ryan's talking pattern and gather concrete examples before escalating to Michael as a formal operational issue",
+      "tags": [
+        "ryan",
+        "monitoring",
+        "michael"
+      ],
+      "timestamp": "2026-06-05T15:30:53.140967+00:00",
+      "session_id": "4d04ba0c-d2c4-4613-951b-aa8fb390d75c"
+    },
+    {
+      "type": "precedent",
+      "content": "Michael's 'live music experience' event last year had issues with inadequate planning and advance notice to the team; Pam learned that locking in event details before promising to staff prevents stress and ensures better outcomes",
+      "tags": [
+        "events",
+        "planning",
+        "lessons-learned"
+      ],
+      "timestamp": "2026-06-05T15:32:24.934851+00:00",
+      "session_id": "ac40d6e8-627d-4cd2-aa11-ae1be893a35f"
+    },
+    {
+      "type": "preference",
+      "content": "User is interested in planning a London office party; may want to revisit this once a realistic timeline is established",
+      "tags": [
+        "events",
+        "london",
+        "office-party"
+      ],
+      "timestamp": "2026-06-05T15:32:24.934865+00:00",
+      "session_id": "ac40d6e8-627d-4cd2-aa11-ae1be893a35f"
+    },
+    {
+      "type": "precedent",
+      "content": "User is planning a summer office party and wants to secure headcount confirmation, potential dates (July or August), and budget from accounting before finalizing details",
+      "tags": [
+        "event-planning",
+        "summer-party",
+        "process"
+      ],
+      "timestamp": "2026-06-05T15:36:40.179172+00:00",
+      "session_id": "9e338732-ec7f-4325-b4e8-cd389824e22c"
+    },
+    {
+      "type": "preference",
+      "content": "User has learned from previous year's party experience and wants to avoid repeating past mistakes",
+      "tags": [
+        "event-planning",
+        "lessons-learned"
+      ],
+      "timestamp": "2026-06-05T15:36:40.179200+00:00",
+      "session_id": "9e338732-ec7f-4325-b4e8-cd389824e22c"
     }
   ]
 }

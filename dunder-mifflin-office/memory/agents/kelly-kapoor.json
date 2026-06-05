@@ -33,6 +33,61 @@
       ],
       "timestamp": "2026-06-05T14:41:07.756963+00:00",
       "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    },
+    {
+      "type": "precedent",
+      "content": "User successfully executed a Golden Hour Garden Party theme in June that was well-received by office staff",
+      "tags": [
+        "events",
+        "dunder-mifflin",
+        "party-planning"
+      ],
+      "timestamp": "2026-06-05T15:32:24.828163+00:00",
+      "session_id": "ac40d6e8-627d-4cd2-aa11-ae1be893a35f"
+    },
+    {
+      "type": "preference",
+      "content": "User prefers elevated, themed parties with intentional aesthetics (garden party, color palettes, decor) over casual/low-key office events",
+      "tags": [
+        "entertainment",
+        "work-culture",
+        "style"
+      ],
+      "timestamp": "2026-06-05T15:32:24.828184+00:00",
+      "session_id": "ac40d6e8-627d-4cd2-aa11-ae1be893a35f"
+    },
+    {
+      "type": "precedent",
+      "content": "Golden Hour Garden Party was held in June and was successful",
+      "tags": [
+        "events",
+        "party_planning",
+        "past_success"
+      ],
+      "timestamp": "2026-06-05T15:36:40.187358+00:00",
+      "session_id": "9e338732-ec7f-4325-b4e8-cd389824e22c"
+    },
+    {
+      "type": "preference",
+      "content": "Kelly favors trendy, Instagram-worthy party elements like photo corners with ring lights, grazing tables, and current pop culture references",
+      "tags": [
+        "party_planning",
+        "aesthetic",
+        "social_media"
+      ],
+      "timestamp": "2026-06-05T15:36:40.187367+00:00",
+      "session_id": "9e338732-ec7f-4325-b4e8-cd389824e22c"
+    },
+    {
+      "type": "relationship",
+      "content": "Ryan is currently doing a cleanse and Kelly considers dietary/wellness inclusion when planning events",
+      "tags": [
+        "relationships",
+        "ryan",
+        "party_planning"
+      ],
+      "timestamp": "2026-06-05T15:36:40.187370+00:00",
+      "session_id": "9e338732-ec7f-4325-b4e8-cd389824e22c"
     }
   ]
 }

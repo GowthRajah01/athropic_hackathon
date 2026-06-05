@@ -10,6 +10,28 @@
       ],
       "timestamp": "2026-06-05T14:20:22.124975+00:00",
       "session_id": "581f0ecd-6fb1-4548-98e9-3cc0b079a3b6"
+    },
+    {
+      "type": "relationship",
+      "content": "Ryan tends to overcompensate by talking excessively with strategy-speak and buzzwords, especially after being away; he occasionally has good ideas but they get buried under the noise",
+      "tags": [
+        "ryan",
+        "communication_style",
+        "workplace_dynamics"
+      ],
+      "timestamp": "2026-06-05T15:30:53.144559+00:00",
+      "session_id": "4d04ba0c-d2c4-4613-951b-aa8fb390d75c"
+    },
+    {
+      "type": "precedent",
+      "content": "Jim is willing and practiced at directly telling people to hold their thoughts/wait their turn (has experience with similar situations)",
+      "tags": [
+        "jim_approach",
+        "conflict_resolution",
+        "management"
+      ],
+      "timestamp": "2026-06-05T15:30:53.144572+00:00",
+      "session_id": "4d04ba0c-d2c4-4613-951b-aa8fb390d75c"
     }
   ]
 }

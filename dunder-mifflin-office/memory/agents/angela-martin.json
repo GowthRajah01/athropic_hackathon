@@ -33,6 +33,61 @@
       ],
       "timestamp": "2026-06-05T14:41:08.114411+00:00",
       "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    },
+    {
+      "type": "precedent",
+      "content": "User attempted to plan an office party in London for tomorrow without proper budget approval or Party Planning Committee review. Angela rejected this as non-compliant and reaffirmed the approved summer party: Scranton office, $400 budget, white and gold theme, no DJ, no inflatables.",
+      "tags": [
+        "party-planning",
+        "budget-compliance",
+        "user-behavior"
+      ],
+      "timestamp": "2026-06-05T15:32:25.078530+00:00",
+      "session_id": "ac40d6e8-627d-4cd2-aa11-ae1be893a35f"
+    },
+    {
+      "type": "preference",
+      "content": "Angela Martin enforces strict adherence to the Party Planning Committee's submission and review process, requires minimum 6 weeks lead time for major proposals, and demands formal budget proposals to Corporate with detailed vendor plans and justification.",
+      "tags": [
+        "angela-martin",
+        "process-compliance",
+        "budget-management"
+      ],
+      "timestamp": "2026-06-05T15:32:25.078553+00:00",
+      "session_id": "ac40d6e8-627d-4cd2-aa11-ae1be893a35f"
+    },
+    {
+      "type": "precedent",
+      "content": "Summer office party budget is $400 with allocation: Food $180, Non-alcoholic beverages $60, Decorations $95, Miscellaneous $65",
+      "tags": [
+        "party planning",
+        "budget",
+        "summer event"
+      ],
+      "timestamp": "2026-06-05T15:36:40.185238+00:00",
+      "session_id": "9e338732-ec7f-4325-b4e8-cd389824e22c"
+    },
+    {
+      "type": "precedent",
+      "content": "Summer office party theme is white and gold, with restrictions against DJ, inflatable decorations, and unapproved last-minute additions",
+      "tags": [
+        "party planning",
+        "theme",
+        "constraints"
+      ],
+      "timestamp": "2026-06-05T15:36:40.185255+00:00",
+      "session_id": "9e338732-ec7f-4325-b4e8-cd389824e22c"
+    },
+    {
+      "type": "preference",
+      "content": "Party suggestions must be submitted in writing to Party Planning Committee for consideration and approval",
+      "tags": [
+        "party planning",
+        "process",
+        "governance"
+      ],
+      "timestamp": "2026-06-05T15:36:40.185260+00:00",
+      "session_id": "9e338732-ec7f-4325-b4e8-cd389824e22c"
     }
   ]
 }

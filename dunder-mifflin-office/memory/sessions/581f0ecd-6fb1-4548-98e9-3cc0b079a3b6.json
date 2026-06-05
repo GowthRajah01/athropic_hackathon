@@ -1,0 +1,61 @@
+{
+  "session_id": "581f0ecd-6fb1-4548-98e9-3cc0b079a3b6",
+  "created_at": "2026-06-05T14:19:53.124005+00:00",
+  "user_name": "Regional Director",
+  "title": "Session — Regional Director",
+  "messages": [
+    {
+      "id": "b589f6b3-1d25-472b-832f-69abe8cd35db",
+      "timestamp": "2026-06-05T14:20:01.159939+00:00",
+      "role": "user",
+      "agent": null,
+      "content": "im angry",
+      "user_name": "Regional Director",
+      "message_type": "user"
+    },
+    {
+      "id": "247ac201-2d34-4a4b-9c67-42b5e8347dc6",
+      "timestamp": "2026-06-05T14:20:04.132161+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Okay, we need to figure out what's really going on here and make sure we handle this the right way — Jim's gonna help me understand the real issue, and Pam's gonna make sure we document everything properly.",
+      "message_type": "routing",
+      "role": "assistant"
+    },
+    {
+      "id": "17b3fdcc-7518-420f-b260-8e523e5a004e",
+      "timestamp": "2026-06-05T14:20:09.825103+00:00",
+      "agent": "jim-halpert",
+      "agent_display_name": "Jim Halpert",
+      "agent_emoji": "😏",
+      "agent_color": "#2e7d32",
+      "content": "*looks at camera*\n\nOkay. So you're angry. That's... a starting point.\n\nHere's what I've learned from working with clients — and honestly, from working with Michael — is that \"angry\" is usually the surface thing. There's almost always something underneath it. Could be something specific happened and it was legitimately unfair. Could be something small happened but it's actually about six other things that have been building up. Those are pretty different problems.\n\nSo help me out here. What's going on?",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "2a9063cb-81d8-40da-b548-1b3a99aeef28",
+      "timestamp": "2026-06-05T14:20:09.843863+00:00",
+      "agent": "pam-beesly",
+      "agent_display_name": "Pam Beesly",
+      "agent_emoji": "🎨",
+      "agent_color": "#7b4397",
+      "content": "Oh, I'm sorry to hear that — and I want to help figure out what's going on.\n\nBefore I can pull together the right context for Michael, it would really help to know a little more. Are you a client, a vendor, or are you on the team here? And do you have a sense of what the issue involves — is it an order, something that was said, a scheduling problem? Even a general direction helps me find the right thread to pull.\n\nI'm not trying to give you the runaround, I promise. I just want to make sure that when we respond, we're actually responding to the *right* thing and not sending you in circles. That happens sometimes here, and it's not great.\n\nTake your time. I'm listening.",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "8357ea43-9ae0-490b-a723-d7ac2fef3f28",
+      "timestamp": "2026-06-05T14:20:20.884021+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Okay. *Okay.* First of all — I hear you. \"I'm angry.\" Two words. Powerful. You know who else only needed two words? Terminator. \"I'll back.\" Wait, that's two words AND an apostrophe, so actually that's even MORE efficient. The point is: brevity. Respect.\n\nNow, my team — my *family*, honestly — has weighed in, and they are GOOD. Jim, who is like the cool older brother I never had but definitely deserved, is pointing out that anger is usually just the tip of the iceberg. Like the Titanic. Which, spoiler alert, did NOT end well when people ignored what was underneath. And Pam — sweet, wonderful, incredibly competent Pam, who keeps this whole office from literally collapsing — she just wants to make sure we actually help you with the *right* thing, because sending someone in circles is, and I quote, \"not great.\" She is so right. I have been in circles. Emotionally. It is a dark place.\n\nSo here's what we're going to do, and this comes straight from the top — from me, Michael Gary Scott, Regional Manager and also your friend right now: **tell us what's going on.** Are you a client? Part of the team? Did something specific happen, or has a bunch of stuff been slowly piling up like a very sad, angry lasagna? Whatever it is, we are *here*. That's what she said. No wait — that's what *I* said. About caring. Bam.",
+      "message_type": "synthesis",
+      "role": "assistant"
+    }
+  ]
+}

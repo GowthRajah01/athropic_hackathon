@@ -6,101 +6,111 @@ interface HeaderProps {
   onToggleSessions: () => void;
 }
 
+function pad(n: number) { return String(n).padStart(2, '0'); }
+
+function nowLabel() {
+  const d = new Date();
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+}
+
 export default function Header({ sessionTitle, userName, onToggleSessions }: HeaderProps) {
   return (
-    <header style={{
-      background: theme.colors.primary,
-      color: theme.colors.white,
-      padding: '0 24px',
-      height: '64px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-      flexShrink: 0,
-      zIndex: 10,
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <button
-          onClick={onToggleSessions}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'rgba(255,255,255,0.7)',
-            cursor: 'pointer',
-            fontSize: '20px',
-            padding: '4px 8px',
-            borderRadius: theme.radii.sm,
-            lineHeight: 1,
-          }}
-          title="Session history"
-        >
-          ☰
-        </button>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          {/* Dunder Mifflin logo mark */}
-          <div style={{
-            width: '40px',
-            height: '40px',
-            background: theme.colors.gold,
-            borderRadius: theme.radii.sm,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontFamily: theme.fonts.heading,
-            fontWeight: 'bold',
-            fontSize: '16px',
-            color: theme.colors.primary,
-            letterSpacing: '-1px',
-            flexShrink: 0,
-          }}>
-            DM
-          </div>
-          <div>
-            <div style={{
-              fontFamily: theme.fonts.heading,
+    <header style={{ background: theme.colors.surface, flexShrink: 0, zIndex: 10 }}>
+      <div style={{
+        padding: '24px 28px 16px',
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'space-between',
+      }}>
+        {/* Left: wordmark + drawer toggle */}
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '20px' }}>
+          <button
+            onClick={onToggleSessions}
+            title="Session history"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: theme.colors.grey,
               fontSize: '18px',
-              fontWeight: 'bold',
-              letterSpacing: '0.5px',
-              lineHeight: 1.1,
+              lineHeight: 1,
+              padding: '0 0 4px 0',
+              fontFamily: theme.fonts.mono,
+            }}
+          >
+            ☰
+          </button>
+
+          <div>
+            {/* Masthead wordmark */}
+            <div style={{
+              fontFamily: theme.fonts.display,
+              fontWeight: 900,
+              fontStyle: 'italic',
+              fontSize: '38px',
+              letterSpacing: '-0.03em',
+              color: theme.colors.primary,
+              lineHeight: 1,
             }}>
               Dunder Mifflin
             </div>
+            {/* Tagline */}
             <div style={{
-              fontSize: '10px',
-              color: 'rgba(255,255,255,0.6)',
+              fontFamily: theme.fonts.serif,
               fontStyle: 'italic',
-              letterSpacing: '0.3px',
+              fontSize: '13px',
+              color: theme.colors.grey,
+              marginTop: '3px',
             }}>
               Limitless Paper in a Paperless World
             </div>
+            {/* Location label */}
+            <div style={{
+              fontFamily: theme.fonts.serif,
+              fontSize: '11px',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: theme.colors.grey,
+              marginTop: '4px',
+            }}>
+              Scranton Branch · Internal Portal
+            </div>
+          </div>
+        </div>
+
+        {/* Right: session info + stamp */}
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-end',
+          gap: '6px',
+        }}>
+          <div style={{
+            fontFamily: theme.fonts.serif,
+            fontSize: '11px',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: theme.colors.grey,
+          }}>
+            Session: {userName} · {nowLabel()}
+          </div>
+          <div style={{
+            fontFamily: theme.fonts.serif,
+            fontSize: '11px',
+            color: theme.colors.grey,
+            fontStyle: 'italic',
+            maxWidth: '220px',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+          }}>
+            {sessionTitle}
           </div>
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <div style={{
-          fontSize: '13px',
-          color: 'rgba(255,255,255,0.7)',
-          fontStyle: 'italic',
-          maxWidth: '200px',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap',
-        }}>
-          {sessionTitle}
-        </div>
-        <div style={{
-          background: 'rgba(255,255,255,0.15)',
-          borderRadius: theme.radii.pill,
-          padding: '4px 12px',
-          fontSize: '12px',
-          color: 'rgba(255,255,255,0.9)',
-        }}>
-          👤 {userName}
-        </div>
-      </div>
+      {/* 2px navy rule separating header from content */}
+      <div style={{ height: '2px', background: theme.colors.primary }} />
     </header>
   );
 }

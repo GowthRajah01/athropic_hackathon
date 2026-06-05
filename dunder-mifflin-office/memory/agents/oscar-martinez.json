@@ -1,0 +1,26 @@
+{
+  "agent": "oscar-martinez",
+  "entries": [
+    {
+      "type": "precedent",
+      "content": "Michael prefers detailed explanations with proper cost structure analysis rather than just numbers when answering pricing questions",
+      "tags": [
+        "communication_style",
+        "michael_preference"
+      ],
+      "timestamp": "2026-06-05T14:39:01.499222+00:00",
+      "session_id": "ab6d4a4b-f88f-450d-8935-5ee9707d61a8"
+    },
+    {
+      "type": "fact",
+      "content": "Standard copy paper (8.5x11, 20lb bond) landed cost at Scranton branch is approximately $38-$45 per case, with typical selling range of $52-$60 for standard accounts (25-35% gross margin)",
+      "tags": [
+        "pricing",
+        "paper_costs",
+        "cost_structure"
+      ],
+      "timestamp": "2026-06-05T14:39:01.499243+00:00",
+      "session_id": "ab6d4a4b-f88f-450d-8935-5ee9707d61a8"
+    }
+  ]
+}

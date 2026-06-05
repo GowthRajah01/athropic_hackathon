@@ -1,0 +1,38 @@
+{
+  "agent": "kelly-kapoor",
+  "entries": [
+    {
+      "type": "precedent",
+      "content": "Kelly successfully planned a summer office party with a Golden Hour Garden Party theme, featuring fairy lights, a grazing table, and a curated playlist (Beyoncé, Doja Cat, Destiny's Child) avoiding classic rock",
+      "tags": [
+        "office party",
+        "event planning",
+        "kelly's work"
+      ],
+      "timestamp": "2026-06-05T14:41:07.756934+00:00",
+      "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    },
+    {
+      "type": "preference",
+      "content": "Kelly prefers modern, trendy aesthetic for events (elevated casual, Pinterest-inspired) and strongly dislikes classic rock/2009 iPod shuffle playlists for gatherings",
+      "tags": [
+        "kelly's taste",
+        "event preferences",
+        "music"
+      ],
+      "timestamp": "2026-06-05T14:41:07.756958+00:00",
+      "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    },
+    {
+      "type": "relationship",
+      "content": "Ryan once made Kelly a good playlist that she appreciated, though he noted it wasn't made specifically for her, which hurt her feelings",
+      "tags": [
+        "ryan",
+        "kelly's relationships",
+        "emotional memory"
+      ],
+      "timestamp": "2026-06-05T14:41:07.756963+00:00",
+      "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    }
+  ]
+}

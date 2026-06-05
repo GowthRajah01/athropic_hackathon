@@ -1,0 +1,15 @@
+{
+  "agent": "jim-halpert",
+  "entries": [
+    {
+      "type": "fact",
+      "content": "User is experiencing anger",
+      "tags": [
+        "emotional_state",
+        "initial_context"
+      ],
+      "timestamp": "2026-06-05T14:20:22.124975+00:00",
+      "session_id": "581f0ecd-6fb1-4548-98e9-3cc0b079a3b6"
+    }
+  ]
+}

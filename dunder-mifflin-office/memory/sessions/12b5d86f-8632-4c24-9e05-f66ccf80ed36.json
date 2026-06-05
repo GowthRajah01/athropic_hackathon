@@ -1,0 +1,61 @@
+{
+  "session_id": "12b5d86f-8632-4c24-9e05-f66ccf80ed36",
+  "created_at": "2026-06-05T14:41:13.093368+00:00",
+  "user_name": "Regional Director",
+  "title": "Session — Regional Director",
+  "messages": [
+    {
+      "id": "0f29610e-b180-4a1d-af7b-11c150b3c060",
+      "timestamp": "2026-06-05T14:43:00.111001+00:00",
+      "role": "user",
+      "agent": null,
+      "content": "someone filed an HR complaint",
+      "user_name": "Regional Director",
+      "message_type": "user"
+    },
+    {
+      "id": "67391d69-b107-47c3-8211-58656a0b73af",
+      "timestamp": "2026-06-05T14:43:06.881426+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Okay, this is serious. Toby needs to handle the legal nightmare, and Pam will keep me in the loop so I don't find out from corporate like some kind of peasant.",
+      "message_type": "routing",
+      "role": "assistant"
+    },
+    {
+      "id": "8247b44f-b170-4d2b-8e04-d938c8d0b97d",
+      "timestamp": "2026-06-05T14:43:18.166870+00:00",
+      "agent": "toby-flenderson",
+      "agent_display_name": "Toby Flenderson",
+      "agent_emoji": "📋",
+      "agent_color": "#546e7a",
+      "content": "*takes a slow breath, opens a manila folder, uncaps a pen*\n\nOkay. I want to start by saying — I know this feels like a disruption, and I know Michael probably wants this resolved quietly and quickly, but the right way to handle a formal complaint is also, in this case, the legally required way. So. Let's do this properly.\n\nFirst things first: I'm going to need the specifics. Who filed the complaint, who or what the complaint is *about*, and whether this was filed verbally or in writing. If it came to me directly, I'll have it documented. If it went to Michael first — *pauses* — I'll need him to transfer everything to me, because complaints need to run through HR, not around it. That's not a preference, that's policy. And also just... how things should work.\n\nOnce I have the details, I'll assess what category we're dealing with — harassment, discrimination, hostile work environment, wage dispute, retaliation, something else — because each of those has a different investigation protocol and different legal exposure for the company. Some of these are situations where I can handle them internally. Others, I'll be honest, are situations where corporate legal needs to be looped in before *anyone* says anything else to *anyone*.\n\nIn the meantime: if you're the person who filed, or you know who did — that individual has protected status right now. No adverse action, no social pressure, no \"quiet conversations\" in the break room. I just want to flag that clearly, because historically that part does not always land the way I need it to. *writes something in the folder* Can you tell me what happened?",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "9c6dcdee-63e0-4cb3-9345-aa12699ea876",
+      "timestamp": "2026-06-05T14:43:18.187461+00:00",
+      "agent": "pam-beesly",
+      "agent_display_name": "Pam Beesly",
+      "agent_emoji": "🎨",
+      "agent_color": "#7b4397",
+      "content": "Okay, so here's what I have so far — and I want to be upfront that the details are still coming together, so bear with me.\n\nWhat I know right now is that a complaint was filed, but I don't yet have the specifics on who filed it, who it's against, or exactly when it went in. HR complaints usually route through Toby first, which means the paper trail exists — I just need to get eyes on it before Toby schedules one of his quiet little \"just so you know\" conversations with Michael. I'd recommend I reach out to Toby directly and ask for the incident summary. I can frame it as routine records coordination so it doesn't feel like anyone's stepping on his process.\n\nIn terms of whether this is going to blow up — honestly, that depends entirely on what's in it. If it's something interpersonal between two employees, we can usually work through it with documentation and a mediated conversation. If it names a manager, or involves a pattern of behavior, that's when things get more complicated and we may need to loop in corporate. I'll flag that clearly once I have the actual complaint in hand.\n\nMy plan: I'll go talk to Toby now, get a copy of whatever was filed, and bring Michael a summary before end of day — *before* Toby does. Give me an hour. And if anyone asks, I'm just doing a routine filing audit.",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "bf9408d8-b530-4a77-b0fb-9a51242f787c",
+      "timestamp": "2026-06-05T14:43:29.302411+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Okay. Okay okay okay. First of all — breathe. Everything is fine. You know who else had to deal with complaints? Abraham Lincoln. Gandhi. Me, multiple times. And we all came out stronger. That is not a direct quote but it should be.\n\nHere is what is happening, because I am on top of this completely: Toby — good old Toby, the human equivalent of a speed bump, but a *necessary* speed bump, legally speaking — is handling the official HR side of things. He needs the full details: who filed, who it's about, whether it was verbal or written. He's going to figure out what *category* of complaint this is, because apparently there are categories, which I did not know but am pretending I did. And he is very clear that the person who filed is protected right now, which means nobody talks to anybody in the break room about this. Nobody. Not even casually. I'm looking at no one in particular when I say that. *Everyone* in particular.\n\nMeanwhile, Pam — who is honestly the heart and soul of this office and also very good at coordinating things — is going to connect with Toby to get a summary of the complaint so we have the full picture before anything escalates. Together, they are like a two-person SWAT team of documentation and feelings management. The bottom line is: this is being handled, it is going through the proper channels, and if it turns out to be something serious, corporate legal gets looped in. If it's something interpersonal, we mediate. Either way, Michael Scott's Scranton family takes care of its own. That's what I always say. Bam. Said the lady.",
+      "message_type": "synthesis",
+      "role": "assistant"
+    }
+  ]
+}

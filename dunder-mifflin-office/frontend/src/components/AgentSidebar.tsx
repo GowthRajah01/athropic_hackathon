@@ -7,7 +7,7 @@ interface AgentSidebarProps {
   activeAgents: string[];
 }
 
-function AgentCard({ agent, isActive }: { agent: AgentInfo; isActive: boolean }) {
+function AgentRow({ agent, isActive }: { agent: AgentInfo; isActive: boolean }) {
   const style = getAgentStyle(agent.name);
 
   return (
@@ -15,56 +15,66 @@ function AgentCard({ agent, isActive }: { agent: AgentInfo; isActive: boolean })
       display: 'flex',
       alignItems: 'center',
       gap: '10px',
-      padding: '10px 12px',
-      borderRadius: theme.radii.md,
-      background: isActive ? style.lightColor : 'transparent',
-      border: `1px solid ${isActive ? style.color : 'transparent'}`,
-      transition: 'all 0.2s ease',
+      padding: '8px 10px',
+      borderRadius: theme.radii.sm,
+      background: isActive ? 'rgba(27,58,107,0.07)' : 'transparent',
+      border: `1px solid ${isActive ? theme.colors.primary : 'transparent'}`,
       marginBottom: '4px',
+      transition: 'background 0.2s ease, border-color 0.2s ease',
     }}>
+      {/* Monogram circle */}
       <div style={{
-        width: '36px',
-        height: '36px',
+        width: '34px',
+        height: '34px',
         borderRadius: '50%',
-        background: isActive ? style.color : theme.colors.surfaceAlt,
+        background: theme.colors.primary,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize: '18px',
+        fontFamily: theme.fonts.serif,
+        fontWeight: 'bold',
+        fontSize: '12px',
+        color: theme.colors.surface,
         flexShrink: 0,
-        transition: 'all 0.2s ease',
-        boxShadow: isActive ? `0 0 0 3px ${style.lightColor}` : 'none',
+        opacity: isActive ? 1 : 0.6,
+        transition: 'opacity 0.2s ease',
       }}>
-        {style.emoji}
+        {style.monogram}
       </div>
-      <div style={{ minWidth: 0 }}>
+
+      <div style={{ minWidth: 0, flex: 1 }}>
         <div style={{
-          fontSize: '13px',
-          fontWeight: '600',
-          color: isActive ? style.color : theme.colors.text,
+          fontFamily: theme.fonts.serif,
+          fontSize: '12px',
+          fontWeight: 'bold',
+          color: isActive ? theme.colors.primary : theme.colors.text,
           whiteSpace: 'nowrap',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
-          transition: 'color 0.2s ease',
         }}>
           {agent.display_name}
         </div>
         <div style={{
+          fontFamily: theme.fonts.serif,
           fontSize: '10px',
-          color: theme.colors.textMuted,
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          color: theme.colors.grey,
           whiteSpace: 'nowrap',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
         }}>
-          {agent.role.split('—')[0].trim()}
+          {style.department}
         </div>
       </div>
+
+      {/* Active status dot */}
       {isActive && (
         <div style={{
           width: '8px',
           height: '8px',
           borderRadius: '50%',
-          background: style.color,
+          background: theme.colors.red,
           flexShrink: 0,
           animation: 'pulse 1s ease-in-out infinite',
         }} />
@@ -79,73 +89,90 @@ export default function AgentSidebar({ agents, activeAgents }: AgentSidebarProps
 
   return (
     <aside style={{
-      width: '260px',
+      width: '230px',
       background: theme.colors.surface,
-      borderLeft: `1px solid ${theme.colors.border}`,
+      borderLeft: `2px solid ${theme.colors.primary}`,
       padding: '16px 12px',
       overflowY: 'auto',
       flexShrink: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '16px',
     }}>
+      {/* Title */}
       <div style={{
-        fontFamily: theme.fonts.heading,
-        fontSize: '13px',
-        fontWeight: 'bold',
-        color: theme.colors.primary,
-        letterSpacing: '1px',
+        fontFamily: theme.fonts.serif,
+        fontSize: '11px',
+        letterSpacing: '0.18em',
         textTransform: 'uppercase',
-        marginBottom: '12px',
+        color: theme.colors.primary,
+        fontWeight: 'bold',
         paddingBottom: '8px',
-        borderBottom: `1px solid ${theme.colors.border}`,
+        borderBottom: `1px solid ${theme.colors.primary}`,
       }}>
-        Scranton Branch
+        Staff Directory
       </div>
 
-      <div style={{ marginBottom: '16px' }}>
+      {/* Management section */}
+      <div>
         <div style={{
+          fontFamily: theme.fonts.serif,
           fontSize: '10px',
-          fontWeight: '600',
-          color: theme.colors.textMuted,
-          letterSpacing: '0.8px',
+          letterSpacing: '0.12em',
           textTransform: 'uppercase',
+          color: theme.colors.grey,
           marginBottom: '6px',
-          paddingLeft: '12px',
         }}>
           Management
         </div>
         {coordinator.map(agent => (
-          <AgentCard key={agent.name} agent={agent} isActive={activeAgents.includes(agent.name)} />
+          <AgentRow key={agent.name} agent={agent} isActive={activeAgents.includes(agent.name)} />
         ))}
       </div>
 
+      {/* Team section */}
       <div>
         <div style={{
+          fontFamily: theme.fonts.serif,
           fontSize: '10px',
-          fontWeight: '600',
-          color: theme.colors.textMuted,
-          letterSpacing: '0.8px',
+          letterSpacing: '0.12em',
           textTransform: 'uppercase',
+          color: theme.colors.grey,
           marginBottom: '6px',
-          paddingLeft: '12px',
         }}>
           Team
         </div>
         {specialists.map(agent => (
-          <AgentCard key={agent.name} agent={agent} isActive={activeAgents.includes(agent.name)} />
+          <AgentRow key={agent.name} agent={agent} isActive={activeAgents.includes(agent.name)} />
         ))}
       </div>
 
+      {/* Quote footer */}
       <div style={{
-        marginTop: '20px',
-        padding: '12px',
-        background: theme.colors.surfaceAlt,
-        borderRadius: theme.radii.md,
-        border: `1px solid ${theme.colors.border}`,
+        marginTop: 'auto',
+        padding: '10px 12px',
+        background: theme.colors.memoTint,
+        border: `1px solid ${theme.colors.borderGrey}`,
+        borderLeft: `3px solid ${theme.colors.primary}`,
+        borderRadius: theme.radii.sm,
       }}>
-        <div style={{ fontSize: '11px', color: theme.colors.textMuted, fontStyle: 'italic', lineHeight: 1.5 }}>
+        <div style={{
+          fontFamily: theme.fonts.serif,
+          fontSize: '11px',
+          fontStyle: 'italic',
+          color: theme.colors.grey,
+          lineHeight: 1.5,
+        }}>
           "That's what she said."
         </div>
-        <div style={{ fontSize: '10px', color: theme.colors.textLight, marginTop: '4px' }}>
-          — Michael Scott
+        <div style={{
+          fontFamily: theme.fonts.serif,
+          fontSize: '10px',
+          color: theme.colors.textLight,
+          marginTop: '4px',
+          letterSpacing: '0.08em',
+        }}>
+          — Michael Scott, Regional Manager
         </div>
       </div>
     </aside>

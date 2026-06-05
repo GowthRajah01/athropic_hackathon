@@ -1,0 +1,37 @@
+{
+  "agent": "pam-beesly",
+  "entries": [
+    {
+      "type": "precedent",
+      "content": "Michael promised a 'live music experience' for last year's office party that turned out to be his iPod through a Bluetooth speaker - need to manage expectations and budget clarity for future events",
+      "tags": [
+        "office_parties",
+        "michael_scott",
+        "budget_management"
+      ],
+      "timestamp": "2026-06-05T14:41:07.660984+00:00",
+      "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    },
+    {
+      "type": "preference",
+      "content": "Michael responds better to multiple curated options with guardrails rather than open-ended suggestions for party planning decisions",
+      "tags": [
+        "michael_scott",
+        "planning_strategy"
+      ],
+      "timestamp": "2026-06-05T14:41:07.661008+00:00",
+      "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    },
+    {
+      "type": "relationship",
+      "content": "Dwight is very effective at party setup logistics but should not be given authority over security matters",
+      "tags": [
+        "dwight_schrute",
+        "event_planning",
+        "team_dynamics"
+      ],
+      "timestamp": "2026-06-05T14:41:07.661011+00:00",
+      "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3"
+    }
+  ]
+}

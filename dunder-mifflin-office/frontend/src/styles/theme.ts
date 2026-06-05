@@ -1,39 +1,38 @@
 export const theme = {
   colors: {
-    background: '#f5f0e8',
-    surface: '#faf7f2',
-    surfaceAlt: '#ede8de',
-    primary: '#1a3c5e',
-    primaryDark: '#122a44',
-    secondary: '#8b6914',
-    accent: '#2e5e2e',
-    gold: '#c4a035',
-    goldLight: '#e8c95a',
-    text: '#2d2d2d',
-    textMuted: '#6b6b6b',
-    textLight: '#999',
-    border: '#d4cfc5',
-    borderDark: '#bfb9ad',
-    userBubble: '#1a3c5e',
-    userBubbleText: '#ffffff',
-    white: '#ffffff',
-    error: '#c0392b',
+    background:      '#F5F0E8',  // cream/manila
+    surface:         '#FAF7F2',  // off-white (inputs, secondary surfaces)
+    memoTint:        '#FDF8EC',  // memo/chat card background
+    primary:         '#1B3A6B',  // corporate navy
+    primaryDark:     '#122848',
+    red:             '#C0392B',  // faded red (stamps, alerts)
+    grey:            '#8C8276',  // warm mid-grey (metadata, secondary text)
+    text:            '#2d2d2d',
+    textMuted:       '#8C8276',
+    textLight:       '#aaa49c',
+    border:          '#1B3A6B',  // navy borders on memo cards
+    borderGrey:      '#C8C2B8',  // grey dotted dividers
+    userBubble:      '#FAF7F2',  // secondary (user) card — off-white
+    userBubbleText:  '#2d2d2d',
+    white:           '#ffffff',
+    error:           '#C0392B',
   },
   fonts: {
-    heading: "'Georgia', 'Times New Roman', serif",
-    body: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
-    mono: "'Courier New', monospace",
+    display:  "'Playfair Display', 'Georgia', serif",
+    serif:    "Georgia, 'Times New Roman', serif",
+    mono:     "'Courier New', Courier, monospace",
+    // body defaults to mono per spec
+    body:     "'Courier New', Courier, monospace",
+    heading:  "Georgia, 'Times New Roman', serif",
   },
   radii: {
-    sm: '4px',
-    md: '8px',
-    lg: '16px',
-    xl: '24px',
-    pill: '999px',
+    sm:   '2px',
+    md:   '2px',
+    lg:   '2px',
+    pill: '2px',
   },
   shadows: {
-    sm: '0 1px 3px rgba(0,0,0,0.08)',
-    md: '0 2px 8px rgba(0,0,0,0.1)',
-    lg: '0 4px 20px rgba(0,0,0,0.12)',
+    memo: '2px 2px 0 rgba(27,58,107,0.08)',
+    sm:   '1px 1px 0 rgba(27,58,107,0.06)',
   },
 };

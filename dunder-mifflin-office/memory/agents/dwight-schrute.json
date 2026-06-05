@@ -10,6 +10,27 @@
       ],
       "timestamp": "2026-06-05T14:04:31.883892+00:00",
       "session_id": "0db7b0ba-2924-42a7-aeca-7636f5b6c5c6"
+    },
+    {
+      "type": "fact",
+      "content": "User asked about paper pricing - indicates potential customer inquiry or internal question about Dunder Mifflin's product costs",
+      "tags": [
+        "customer_inquiry",
+        "sales_opportunity"
+      ],
+      "timestamp": "2026-06-05T14:39:00.000260+00:00",
+      "session_id": "ab6d4a4b-f88f-450d-8935-5ee9707d61a8"
+    },
+    {
+      "type": "precedent",
+      "content": "Dwight identified seven accounts purchasing over 50 cases per month as retention priorities and indicated intent to conduct targeted outreach calls",
+      "tags": [
+        "sales_strategy",
+        "account_management",
+        "follow_up_required"
+      ],
+      "timestamp": "2026-06-05T14:39:00.000295+00:00",
+      "session_id": "ab6d4a4b-f88f-450d-8935-5ee9707d61a8"
     }
   ]
 }

@@ -37,7 +37,7 @@ function buildDisplayMessages(history: SessionHistoryResponse | null): DisplayMe
           timestamp: msg.timestamp as string,
           type: 'user' as const,
           content: msg.content as string,
-          userName: msg.user_name as string ?? 'User',
+          userName: (msg.user_name as string) ?? 'Staff',
         };
       }
       return {
@@ -59,6 +59,14 @@ function buildDisplayMessages(history: SessionHistoryResponse | null): DisplayMe
     });
 }
 
+const RULED_BG = `repeating-linear-gradient(
+  to bottom,
+  transparent 0px,
+  transparent 27px,
+  rgba(27,58,107,0.07) 27px,
+  rgba(27,58,107,0.07) 28px
+)`;
+
 export default function ChatPanel({
   pendingMessages,
   history,
@@ -78,10 +86,10 @@ export default function ChatPanel({
     <div style={{
       flex: 1,
       overflowY: 'auto',
-      padding: '24px 20px',
+      padding: '20px 24px',
       display: 'flex',
       flexDirection: 'column',
-      background: theme.colors.background,
+      background: `${RULED_BG}, ${theme.colors.background}`,
     }}>
       {allMessages.length === 0 && (
         <div style={{
@@ -90,67 +98,96 @@ export default function ChatPanel({
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          color: theme.colors.textMuted,
-          gap: '16px',
+          gap: '18px',
           textAlign: 'center',
         }}>
-          <div style={{ fontSize: '48px' }}>🏢</div>
+          {/* Welcome memo card */}
           <div style={{
-            fontFamily: theme.fonts.heading,
-            fontSize: '22px',
-            color: theme.colors.primary,
+            background: theme.colors.memoTint,
+            border: `1px solid ${theme.colors.primary}`,
+            borderTop: `4px solid ${theme.colors.primary}`,
+            borderRadius: theme.radii.sm,
+            padding: '28px 36px',
+            maxWidth: '480px',
+            boxShadow: theme.shadows.memo,
           }}>
-            Welcome to the Scranton Branch
-          </div>
-          <div style={{ fontSize: '14px', maxWidth: '380px', lineHeight: 1.6 }}>
-            Ask us anything about paper, sales, HR, compliance, or the inner workings of Dunder Mifflin.
-            Michael and the team are standing by.
-          </div>
-          <div style={{
-            display: 'flex',
-            gap: '8px',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            marginTop: '8px',
-          }}>
-            {[
-              'Prepare a proposal for a new client',
-              'Plan the summer office party',
-              'Someone filed an HR complaint',
-              'What are our paper pricing tiers?',
-            ].map(suggestion => (
-              <div key={suggestion} style={{
-                background: theme.colors.surface,
-                border: `1px solid ${theme.colors.border}`,
-                borderRadius: theme.radii.pill,
-                padding: '6px 14px',
-                fontSize: '12px',
-                color: theme.colors.textMuted,
-                cursor: 'default',
-              }}>
-                {suggestion}
-              </div>
-            ))}
+            <div style={{
+              fontFamily: theme.fonts.serif,
+              fontSize: '10px',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: theme.colors.primary,
+              fontWeight: 'bold',
+              marginBottom: '8px',
+            }}>
+              Welcome Notice
+            </div>
+            <div style={{ borderBottom: `1px dotted ${theme.colors.borderGrey}`, marginBottom: '14px' }} />
+            <div style={{
+              fontFamily: theme.fonts.display,
+              fontWeight: 900,
+              fontStyle: 'italic',
+              fontSize: '26px',
+              color: theme.colors.primary,
+              marginBottom: '10px',
+              letterSpacing: '-0.02em',
+            }}>
+              Welcome to the<br />Scranton Branch
+            </div>
+            <div style={{
+              fontFamily: theme.fonts.mono,
+              fontSize: '13px',
+              lineHeight: 1.7,
+              color: theme.colors.text,
+              marginBottom: '18px',
+            }}>
+              Submit a memo below. Michael and the team<br />
+              are standing by to assist with paper, sales,<br />
+              HR matters, compliance, and more.
+            </div>
+            <div style={{ borderBottom: `1px dotted ${theme.colors.borderGrey}`, marginBottom: '14px' }} />
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center' }}>
+              {[
+                'Prepare a proposal for a new client',
+                'Plan the summer office party',
+                'Someone filed an HR complaint',
+                'What are our paper pricing tiers?',
+              ].map(s => (
+                <div key={s} style={{
+                  background: theme.colors.surface,
+                  border: `1px solid ${theme.colors.borderGrey}`,
+                  borderRadius: theme.radii.sm,
+                  padding: '5px 12px',
+                  fontFamily: theme.fonts.mono,
+                  fontSize: '11px',
+                  color: theme.colors.grey,
+                }}>
+                  {s}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}
 
-      {allMessages.map(msg => {
-        if (msg.type === 'user') {
-          return (
-            <UserBubble
-              key={msg.id}
-              content={msg.content}
-              userName={msg.userName ?? userName}
-              timestamp={msg.timestamp}
-            />
-          );
-        }
-        if (msg.agentMessage) {
-          return <AgentBubble key={msg.id} message={msg.agentMessage} />;
-        }
-        return null;
-      })}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+        {allMessages.map(msg => {
+          if (msg.type === 'user') {
+            return (
+              <UserBubble
+                key={msg.id}
+                content={msg.content}
+                userName={msg.userName ?? userName}
+                timestamp={msg.timestamp}
+              />
+            );
+          }
+          if (msg.agentMessage) {
+            return <AgentBubble key={msg.id} message={msg.agentMessage} />;
+          }
+          return null;
+        })}
+      </div>
 
       {loadingPhase && (
         <TypingIndicator activeAgents={activeAgents} phase={loadingPhase} />

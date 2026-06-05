@@ -1,5 +1,37 @@
 [
   {
+    "session_id": "12b5d86f-8632-4c24-9e05-f66ccf80ed36",
+    "created_at": "2026-06-05T14:41:13.093368+00:00",
+    "user_name": "Regional Director",
+    "title": "Session — Regional Director",
+    "message_count": 5,
+    "last_active": "2026-06-05T14:43:29.302411+00:00"
+  },
+  {
+    "session_id": "c07d2133-9f06-41a4-bdbd-1cc921514dd3",
+    "created_at": "2026-06-05T14:40:20.511296+00:00",
+    "user_name": "Regional Director",
+    "title": "Session — Regional Director",
+    "message_count": 6,
+    "last_active": "2026-06-05T14:41:05.350443+00:00"
+  },
+  {
+    "session_id": "ab6d4a4b-f88f-450d-8935-5ee9707d61a8",
+    "created_at": "2026-06-05T14:38:17.443771+00:00",
+    "user_name": "Regional Director",
+    "title": "Session — Regional Director",
+    "message_count": 5,
+    "last_active": "2026-06-05T14:38:58.266729+00:00"
+  },
+  {
+    "session_id": "581f0ecd-6fb1-4548-98e9-3cc0b079a3b6",
+    "created_at": "2026-06-05T14:19:53.124005+00:00",
+    "user_name": "Regional Director",
+    "title": "Session — Regional Director",
+    "message_count": 5,
+    "last_active": "2026-06-05T14:20:20.884021+00:00"
+  },
+  {
     "session_id": "62604848-bafb-41a2-88a8-f28445757474",
     "created_at": "2026-06-05T14:06:46.330384+00:00",
     "user_name": "Regional Director",

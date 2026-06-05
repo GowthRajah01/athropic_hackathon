@@ -1,0 +1,61 @@
+{
+  "session_id": "62604848-bafb-41a2-88a8-f28445757474",
+  "created_at": "2026-06-05T14:06:46.330384+00:00",
+  "user_name": "Regional Director",
+  "title": "Session — Regional Director",
+  "messages": [
+    {
+      "id": "4585a92d-a822-4e0c-9e6e-1ea52ee30014",
+      "timestamp": "2026-06-05T14:07:03.568218+00:00",
+      "role": "user",
+      "agent": null,
+      "content": "im angry",
+      "user_name": "Regional Director",
+      "message_type": "user"
+    },
+    {
+      "id": "696dc618-963b-4b4a-873b-ebc5f58f1999",
+      "timestamp": "2026-06-05T14:07:06.732099+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Okay, okay — someone's upset, and that's a code red for me. Kelly's gonna read the room and Jim's gonna figure out what actually happened here.",
+      "message_type": "routing",
+      "role": "assistant"
+    },
+    {
+      "id": "62eed68a-f8e9-4303-9b86-28a309dde043",
+      "timestamp": "2026-06-05T14:07:15.461936+00:00",
+      "agent": "kelly-kapoor",
+      "agent_display_name": "Kelly Kapoor",
+      "agent_emoji": "💅",
+      "agent_color": "#d81b60",
+      "content": "Oh my GOD, okay, first of all — same. Like, I feel that SO much right now, you have no idea. But also — and this is important — I need to know *why* you're angry because there is a huge difference between \"the paper was late and now my whole presentation is ruined\" angry and \"I was treated like I didn't matter\" angry, and those are completely different situations that require completely different responses from us.\n\nBecause here's the thing that people don't understand about anger — and I know this because I have been angry a LOT, like more than most people, Ryan makes me angry literally every single day — anger is almost never actually about the surface thing. It's about feeling disrespected, or ignored, or like someone didn't care enough to do the thing right. And THAT is what I need to understand here.\n\nSo can you tell me what happened? Because I genuinely want to fix this. I'm not just saying that. Well, Michael told me to say that, but I also actually mean it, which is rare and you should appreciate it. What did we do, or what did *someone* do, and how bad is the feeling on a scale of \"mildly inconvenienced\" to \"I am telling everyone I know\"? Because if it's the second one, we need to move fast.",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "c1940713-cbc1-4213-93a5-3369d8d51e0f",
+      "timestamp": "2026-06-05T14:07:15.481058+00:00",
+      "agent": "jim-halpert",
+      "agent_display_name": "Jim Halpert",
+      "agent_emoji": "😏",
+      "agent_color": "#2e7d32",
+      "content": "Yeah, I can see that.\n\nSo here's what I'm going to do, which is different from what Michael would do — I'm not going to immediately assume it's about me, schedule a mandatory fun session, or make it worse by doing a character voice. I'm just going to ask: what happened?\n\nBecause \"angry\" covers a lot of ground. There's \"angry because something unfair happened\" — which is legitimate and worth talking through. There's \"angry because something's been building for a while and this was the thing that finally tipped it\" — also legitimate, and probably the more interesting conversation. And then there's \"angry and I just needed to say it out loud to someone who wasn't going to overreact.\"\n\nAny of those work. I'm not going anywhere. What's the actual situation?",
+      "message_type": "specialist",
+      "role": "assistant"
+    },
+    {
+      "id": "46b8ffa0-655d-4688-8a70-7344d24ed4a0",
+      "timestamp": "2026-06-05T14:07:26.110050+00:00",
+      "agent": "michael-scott",
+      "agent_display_name": "Michael Scott",
+      "agent_emoji": "🏆",
+      "agent_color": "#1a3c5e",
+      "content": "Okay. Okay okay okay. First of all — I heard you. Michael Scott heard you. And I want you to know that when you said \"I'm angry,\" I felt that in my chest, right here, like that scene in Braveheart where Mel Gibson is about to charge and everyone is just *feeling it*. That's me right now. Feeling it.\n\nSo I brought in my two best people — Kelly, who is basically a PhD in emotions and drama, and Jim, who is very tall and occasionally useful — and they both said the same thing, which tells me something, because usually Jim is being sarcastic and Kelly is crying, so when they agree, I listen. And what they said is: *we need to know more.* Because \"angry\" is just the headline, and Michael Scott has always said that the headline is not the story. The story is what happened underneath. Was it a people thing? A fairness thing? One of those things that's been building up for a while and the last little thing just knocked the whole Jenga tower over? Because those are all different, and you deserve a different response to each one.\n\nHere's what I need from you, and I say this as your boss, your friend, and honestly at this point basically your therapist — tell us what actually happened. No judgment. This is a safe space. I declared it a safe space in 2009 and that declaration still stands. Kelly wants to fix it and Jim wants to understand it and I, Michael Gary Scott, want to do *both*, because that is who I am. So talk to us. That's what she said. No wait — that one doesn't work here. But the sentiment stands. We're listening.",
+      "message_type": "synthesis",
+      "role": "assistant"
+    }
+  ]
+}
